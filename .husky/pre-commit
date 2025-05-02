@@ -1,0 +1,21 @@
+#!/bin/bash
+
+NC='\033[0m'
+BOrange='\033[48;5;202;97m'
+BRed='\033[1;97;41m'
+BGreen='\033[1;32m'
+
+
+# Get current branch name
+BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+
+# Allowed branch prefixes
+ALLOWED_PREFIXES="^(feature/|enhancement/|release/|docs/|task/|bugfix/|hotfix/)"
+
+if ! echo "$BRANCH_NAME" | grep -Eq "$ALLOWED_PREFIXES"; then
+  echo "❌ ERROR: Branch name '$BRANCH_NAME' is not allowed."
+  echo "✅ Allowed prefixes: feature/, enhancement/, release/, docs/, task/, bugfix/, hotfix/"
+  exit 1
+fi
+
+echo "✅ Branch name '$BRANCH_NAME' is valid."

@@ -4,7 +4,8 @@ import axios, { AxiosError } from "axios";
 export const  api = axios.create({
     baseURL: APP_URL,
     withCredentials: true,
-    withXSRFToken: true,
+    xsrfCookieName: "XSRF-TOKEN",
+    xsrfHeaderName: "X-XSRF-TOKEN",
 
 });
 

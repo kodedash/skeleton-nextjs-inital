@@ -1,0 +1,8 @@
+feature_request:
+  feature: "A clear and concise description of the feature proposal."
+  motivation_and_examples:
+    description: "Tell us why the feature is useful."
+    implementation: "Describe what the feature would look like, if it is implemented."
+    note: "Best demonstrated using code examples in addition to words."
+  note: "Add any other context or screenshots about the feature request here."
+  video: ""
